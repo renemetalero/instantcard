@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "81e30d7b-da08-4f35-86ca-eed08c073bcf",
+		"name": "InstantCard",
+		"description": "Esta colección contiene los APIs para el tratamiento de la tarjeta instantánea digital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26274311"
+	},
+	"item": [
+		{
+			"name": "Create instant card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"_applicationId\": \"<string>\",\n        \"_datetime\": \"<string>\",\n        \"_messageId\": \"<string>\",\n        \"_messageIdOrg\": \"<string>\",\n        \"_messageType\": \"<string>\",\n        \"_serviceId\": \"<string>\",\n        \"_shortMessageId\": \"<string>\"\n    },\n    \"data\": {\n        \"header\": {\n            \"branch\": \"<string>\",\n            \"supervisor\": \"<string>\",\n            \"batch\": \"<string>\",\n            \"date\": \"<string>\",\n            \"hour\": \"<string>\",\n            \"system\": \"<string>\",\n            \"user\": \"<string>\",\n            \"locationUser\": \"<string>\",\n            \"channelId\": \"<string>\",\n            \"instanceId\": \"<string>\"\n        },\n        \"body\": {\n            \"organization\": \"<long>\",\n            \"productType\": \"<string>\",\n            \"logo\": \"<string>\",\n            \"customerNumber\": \"<string>\",\n            \"cycle\": \"<long>\",\n            \"pct\": \"<string>\",\n            \"owningBranch\": \"<long>\",\n            \"pctOvStartdt\": \"<long>\",\n            \"pctOvEnddt\": \"<long>\",\n            \"accountCashPlanNumber\": \"<long>\",\n            \"accountRetailPlanNumber\": \"<long>\",\n            \"accountPromoPlanNumber\": \"<long>\",\n            \"directDebitAccount\": \"<string>\",\n            \"ddRoutingNumber\": \"<string>\",\n            \"customerSelectedDueDate\": \"<long>\",\n            \"temporaryCreditLimit\": \"<biginteger>\",\n            \"temporaryCreditLimitExpDt\": \"<long>\",\n            \"officerCode\": \"<long>\",\n            \"authLimitOverride\": \"<long>\",\n            \"cardNumber\": \"<string>\",\n            \"creditLimit\": \"<biginteger>\",\n            \"emblemId\": \"<integer>\",\n            \"embossedName1\": \"<string>\",\n            \"embossedName2\": \"<string>\",\n            \"plasticId\": \"<string>\",\n            \"email\": \"<string>\",\n            \"phoneCountryCode\": \"<string>\",\n            \"areaCode\": \"<string>\",\n            \"phoneNumber\": \"<string>\",\n            \"saleExecutive\": \"<string>\",\n            \"customerMaritalStatus\": \"<long>\",\n            \"customerAddressLine1\": \"<string>\",\n            \"customerAddressLine2\": \"<string>\",\n            \"customerCity\": \"<string>\",\n            \"customerState\": \"<string>\",\n            \"requestNumberMantiz\": \"<string>\",\n            \"billingAccountIndicator\": \"<long>\",\n            \"relationshipPrimaryAccountFlag\": \"<long>\",\n            \"relationshipNumber\": \"<biginteger>\",\n            \"duallbillingflag\": \"<string>\",\n            \"alternateCustomerNumberFlag\": \"<string>\",\n            \"alternateCustomerStartDate\": \"<string>\",\n            \"alternateCustomerExpireDate\": \"<string>\",\n            \"alternateCustomerNumber\": \"<string>\",\n            \"customerSelectedDueDay\": \"<string>\",\n            \"blockCode1\": \"<string>\",\n            \"blockCode2\": \"<string>\",\n            \"processingControlTableControlId\": \"<string>\",\n            \"processingControlTableLevelStartDate\": \"<string>\",\n            \"processingControlTableLevelExpireDate\": \"<string>\",\n            \"savingsRoutingNumber\": \"<integer>\",\n            \"savingsAccountNumber\": \"<string>\",\n            \"userAccountNumber\": \"<string>\",\n            \"prepaidPlanNumber\": \"<integer>\",\n            \"prepaidLoadFrequency\": \"<string>\",\n            \"prepaidLoadNumber\": \"<integer>\",\n            \"prepaidLoadAmount\": \"<long>\",\n            \"minimumSingleLoadAmount\": \"<long>\",\n            \"maximumSingleLoadAmount\": \"<long>\",\n            \"internationalCashPlan\": \"<integer>\",\n            \"internationalRetailPlan\": \"<integer>\",\n            \"internationalInstallmentPlan\": \"<integer>\",\n            \"cashPlanInstallmentBilling\": \"<integer>\",\n            \"retailPlanInstallmentBilling\": \"<integer>\",\n            \"acquirerRetailPlan\": \"<integer>\",\n            \"authorizationControlTable\": \"<integer>\",\n            \"retailPlanInstallmentPayments\": \"<integer>\",\n            \"cashPlanInstallmentPayment\": \"<integer>\",\n            \"qualification\": \"<string>\",\n            \"postalCode\": \"<string>\",\n            \"languageCode\": \"<string>\",\n            \"atmCashNumber\": \"<long>\",\n            \"atmCashAmount\": \"<biginteger>\",\n            \"atmCashSingleTransactionLimit\": \"<biginteger>\",\n            \"overTheCounterCashNumber\": \"<long>\",\n            \"overTheCounterCashAmount\": \"<biginteger>\",\n            \"overTheCounterCashSingleTransactionLimit\": \"<biginteger>\",\n            \"retailPurchaseNumber\": \"<long>\",\n            \"retailPurchaseAmt\": \"<biginteger>\",\n            \"retailPurchaseSingleTransactionLimit\": \"<biginteger>\",\n            \"internetPurchaseAmount\": \"<biginteger>\",\n            \"internetPurchaseNumber\": \"<long>\",\n            \"internetPurchaseSingleTransactionLimit\": \"<biginteger>\",\n            \"deliveryOption\": \"<integer>\",\n            \"reissueDeliveryOption\": \"<string>\",\n            \"authorizationCriteriaTableNumber\": \"<string>\",\n            \"programId\": \"<integer>\",\n            \"cardActionReasonCode\": \"<string>\",\n            \"icTotalNumberTransactions\": \"<integer>\",\n            \"icAmountLimitSingleTransaction\": \"<long>\",\n            \"userCode7\": \"<string>\",\n            \"dateOpened\": \"<string>\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"create"
+					]
+				},
+				"description": "Request utilizado para crear tarjeta digital, esta realiza los respectivos llamados a la CMC o IBS para obtener la información del cliente para crear la tarjeta digital mediante el servicio de Fiserv ([https://developer.fiserv.com/product/FirstVisionLATAM/api/?type=post&amp;path=/account/v2/instantCard&amp;branch=main&amp;version=1.3.0](https://developer.fiserv.com/product/FirstVisionLATAM/api/?type=post&path=/account/v2/instantCard&branch=main&version=1.3.0)). Para finalizar ingresa el resultado dentro de las correspondientes tablas en la CMC."
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"_applicationId\": \"Mantiz\",\n        \"_datetime\": \"2023-02-15T09:01:20\",\n        \"_messageId\": \"9d32efc2-2f76-4e20-beca-104687b57e29\",\n        \"_messageIdOrg\": \"9d32efc2-2f76-4e20-beca-104687b57e29\",\n        \"_messageType\": \"Request\",\n        \"_serviceId\": \"CreaTarjetaTdc\",\n        \"_shortMessageId\": \"9d32efc2-2f76-4\"\n    },\n    \"data\": {\n        \"header\": {\n            \"branch\": \"037\",\n            \"supervisor\": \"087\",\n            \"batch\": \"000\",\n            \"date\": \"20210826\",\n            \"hour\": \"123500\",\n            \"system\": \"xxxxxx\",\n            \"user\": \"BA1234         \",\n            \"locationUser\": \"192.168.1.1\",\n            \"channelId\": \"22222\",\n            \"instanceId\": \"11\"\n        },\n        \"body\": {\n            \"organization\": 540,\n            \"productType\": \"TCR\",\n            \"logo\": \"001\",\n            \"customerNumber\": \"0000000000004275153\",\n            \"cycle\": 3,\n            \"pct\": \"066\",\n            \"owningBranch\": 121,\n            \"pctOvStartdt\": 2471840,\n            \"pctOvEnddt\": 5030608,\n            \"accountCashPlanNumber\": 73585,\n            \"accountRetailPlanNumber\": 43978,\n            \"accountPromoPlanNumber\": 67398,\n            \"directDebitAccount\": \"XEo4bUQ77qm5cE966Vr\",\n            \"ddRoutingNumber\": \"zoEY3qir7q\",\n            \"customerSelectedDueDate\": 30,\n            \"temporaryCreditLimit\": null,\n            \"temporaryCreditLimitExpDt\": 3550438,\n            \"officerCode\": 842,\n            \"authLimitOverride\": 4,\n            \"cardNumber\": \"0004390750002326692\",\n            \"creditLimit\": 50000,\n            \"emblemId\": 55555,\n            \"embossedName1\": \"LUIS G ALVARADO\",\n            \"embossedName2\": null,\n            \"plasticId\": \"003692630\",\n            \"email\": \"user@bancoagricola.com\",\n            \"phoneCountryCode\": \"qaC\",\n            \"areaCode\": \"asp\",\n            \"phoneNumber\": \"44776622\",\n            \"saleExecutive\": \"1jkQUF1pda7\",\n            \"customerMaritalStatus\": 8,\n            \"customerAddressLine1\": \"69 AV SUR PFE SENDA FLORIDA\",\n            \"customerAddressLine2\": \"CENTRO DE OPERACIONES BA\",\n            \"customerCity\": \"SAN SALVADOR\",\n            \"customerState\": \"SLV\",\n            \"requestNumberMantiz\": \"ki2kOFjXmW76PxdL0YrH\",\n            \"billingAccountIndicator\": null,\n            \"relationshipPrimaryAccountFlag\": null,\n            \"relationshipNumber\": null,\n            \"dualbillingflag\": \"f\",\n            \"alternateCustomerNumberFlag\": null,\n            \"alternateCustomerStartDate\": null,\n            \"alternateCustomerExpireDate\": null,\n            \"alternateCustomerNumber\": null,\n            \"customerSelectedDueDay\": null,\n            \"blockCode1\": null,\n            \"blockCode2\": null,\n            \"processingControlTableControlId\": null,\n            \"processingControlTableLevelStartDate\": null,\n            \"processingControlTableLevelExpireDate\": null,\n            \"savingsRoutingNumber\": null,\n            \"savingsAccountNumber\": null,\n            \"userAccountNumber\": null,\n            \"prepaidPlanNumber\": null,\n            \"prepaidLoadFrequency\": null,\n            \"prepaidLoadNumber\": null,\n            \"prepaidLoadAmount\": null,\n            \"minimumSingleLoadAmount\": null,\n            \"maximumSingleLoadAmount\": null,\n            \"internationalCashPlan\": 300,\n            \"internationalRetailPlan\": null,\n            \"internationalInstallmentPlan\": null,\n            \"cashPlanInstallmentBilling\": null,\n            \"retailPlanInstallmentBilling\": null,\n            \"acquirerRetailPlan\": null,\n            \"authorizationControlTable\": null,\n            \"retailPlanInstallmentPayments\": null,\n            \"cashPlanInstallmentPayment\": null,\n            \"qualification\": null,\n            \"postalCode\": \"PwUc2aHhI6\",\n            \"languageCode\": null,\n            \"atmCashNumber\": null,\n            \"atmCashAmount\": null,\n            \"atmCashSingleTransactionLimit\": null,\n            \"overTheCounterCashNumber\": null,\n            \"overTheCounterCashAmount\": null,\n            \"overTheCounterCashSingleTransactionLimit\": null,\n            \"retailPurchaseNumber\": null,\n            \"retailPurchaseAmt\": \"504\",\n            \"retailPurchaseSingleTransactionLimit\": null,\n            \"internetPurchaseAmount\": null,\n            \"internetPurchaseNumber\": null,\n            \"internetPurchaseSingleTransactionLimit\": null,\n            \"deliveryOption\": null,\n            \"reissueDeliveryOption\": null,\n            \"authorizationCriteriaTableNumber\": null,\n            \"programId\": null,\n            \"cardActionReasonCode\": null,\n            \"icTotalNumberTransactions\": null,\n            \"icAmountLimitSingleTransaction\": \"503\",\n            \"dateOpened\": \"2024-10-9\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Get access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var tokenResponse = pm.response.json();",
+							"pm.globals.set(\"instantcard-token\", tokenResponse.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"{{tenant_id}}",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				},
+				"description": "Requesto para obtener el token para utilizar el servicio. (La colección incluye predeterminadamente e internamente un script para la automatización de este por si se desea utilizar)"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{instantcard-token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"if(pm.collectionVariables.get('auto_token') !== undefined && pm.collectionVariables.get('auto_token') === 'yes'){",
+					"    const scope =  pm.environment.get('scope');",
+					"    const clientId = pm.environment.get('client_id');",
+					"    const clientSecret = pm.environment.get('client_secret');",
+					"    const tenantId = pm.environment.get('tenant_id');",
+					"    let currentScope = pm.collectionVariables.get('current_scope')",
+					"",
+					"    const MAX_MINUTES = pm.collectionVariables.get(\"time-limit-token\") || 9;",
+					"",
+					"    const now = new Date().getTime();",
+					"    let lastRequestTime = pm.collectionVariables.get('lastRequestTokenTime');",
+					"",
+					"    if(lastRequestTime === undefined)",
+					"        lastRequestTime = now;",
+					"",
+					"    const timeDifference = now - lastRequestTime",
+					"    const minutesDifference = timeDifference/60000",
+					"",
+					"    console.log(\"Elapsed time last token: \"+minutesDifference+\" minutes\");",
+					"    console.log((MAX_MINUTES-minutesDifference)+\" minutes remaining to obtain the token\");",
+					"",
+					"    console.log(clientId)",
+					"    console.log(clientSecret)",
+					"    console.log(\"tenantId: \"+tenantId)",
+					"    console.log(scope)",
+					"    console.log(currentScope)",
+					"",
+					"    if((minutesDifference == 0 || minutesDifference >= MAX_MINUTES || currentScope === undefined ||currentScope != scope) && scope !== undefined && clientId !== undefined && clientSecret !== undefined && tenantId !== undefined){",
+					"        ",
+					"        pm.sendRequest({",
+					"            url: 'https://login.microsoftonline.com/'+tenantId+'/oauth2/v2.0/token',",
+					"            method: 'POST',",
+					"            header: {},",
+					"            body: {",
+					"                mode: 'urlencoded',",
+					"                urlencoded: [",
+					"                    { key: 'scope', value: scope },",
+					"                    { key: 'client_id', value: clientId },",
+					"                    { key: 'client_secret', value: clientSecret },",
+					"                    { key: 'grant_type', value: 'client_credentials' }",
+					"                ]",
+					"            }",
+					"        }, (err, response) => {",
+					"            if (err) {",
+					"                console.error('Error during authentication:', err);",
+					"            } else {",
+					"                const jsonData = response.json();",
+					"                if(jsonData.access_token !== undefined){",
+					"                    pm.globals.set('instantcard-token', jsonData.access_token);",
+					"                    console.log('Token saved to global variable:', jsonData.access_token);",
+					"                }",
+					"            }",
+					"",
+					"            pm.collectionVariables.set('lastRequestTokenTime', now)",
+					"",
+					"        });",
+					"    }",
+					"",
+					"    pm.collectionVariables.set('current_scope', scope)",
+					"",
+					"}",
+					"    ",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "auto_token",
+			"value": "yes",
+			"type": "string"
+		},
+		{
+			"key": "time-limit-token",
+			"value": "9",
+			"type": "string"
+		}
+	]
+}

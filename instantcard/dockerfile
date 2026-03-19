@@ -1,0 +1,9 @@
+#
+FROM dockeragentsbancoagricola.azurecr.io/baes/openjdk:17
+
+EXPOSE 8081
+
+ARG environment
+ENV prof=${environment}
+COPY instantcard.jar instantcard.jar
+ENTRYPOINT ["java", "-Dspring.profiles.active=${prof}", "-jar", "instantcard.jar"]

@@ -1,0 +1,76 @@
+dev:
+  limits:
+    cpu: 450m
+    memory: 800Mi
+  requests:
+    cpu: 400m
+    memory: 750Mi
+
+  spec:
+    replicas: 1
+    minReadySeconds: 7
+
+  hpa:
+    minReplicas: 1
+    maxReplicas: 1
+
+  resource:
+    memory:
+      averageUtilization: 65
+    cpu:
+      averageUtilization: 65
+
+  env:
+    value: "-Xms256m -Xmx512m"
+
+
+qa:
+  limits:
+    cpu: 450m
+    memory: 800Mi
+  requests:
+    cpu: 400m
+    memory: 750Mi
+
+  spec:
+    replicas: 1
+    minReadySeconds: 7
+
+  hpa:
+    minReplicas: 1
+    maxReplicas: 3
+
+  resource:
+    memory:
+      averageUtilization: 65
+    cpu:
+      averageUtilization: 65
+
+  env:
+    value: "-Xms256m -Xmx640m -XX:+UseG1GC"
+
+
+prod:
+  limits:
+    cpu: 450m
+    memory: 800Mi
+  requests:
+    cpu: 400m
+    memory: 750Mi
+
+  spec:
+    replicas: 2
+    minReadySeconds: 7
+
+  hpa:
+    minReplicas: 2
+    maxReplicas: 4
+
+  resource:
+    memory:
+      averageUtilization: 65
+    cpu:
+      averageUtilization: 65
+
+  env:
+    value: "-Xms256m -Xmx640m -XX:+UseG1GC -XX:InitiatingHeapOccupancyPercent=65 -XX:G1ReservePercent=35"

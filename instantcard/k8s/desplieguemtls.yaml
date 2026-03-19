@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: d-$(name)
+  namespace: $(nsmtls)
+  labels:
+    app: $(name)-d
+spec:
+  replicas: $(spec.replicas)
+  minReadySeconds: $(spec.minReadySeconds)
+  selector:
+    matchLabels:
+      app: $(name)-d
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: $(name)-d
+        tier: backend
+    spec:
+      volumes:
+        - name: tmp
+          emptyDir:
+            medium: Memory
+            sizeLimit: 64Mi
+      securityContext:
+        runAsUser: 8877
+        runAsGroup: 8877
+      automountServiceAccountToken: false
+      containers:
+        - name: $(name)
+          image: $(RegistryURL)/$(repository):latest
+          resources:
+            limits:
+              memory: $(limits.memory)
+              cpu: $(limits.cpu)
+            requests:
+              memory: $(requests.memory)
+              cpu: $(requests.cpu)
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 8877
+            capabilities:
+              drop:
+                - ALL
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmp
+              subPath: tmp
+          ports:
+            - containerPort: 8081
+          env:
+            - name: JAVA_TOOL_OPTIONS
+              value: $(env.value)
+            - name: TZ
+              value: America/El_Salvador

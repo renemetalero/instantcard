@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: $(name)-internal-gateway
+  namespace: $(nsmtls)
+spec:
+  selector:
+    istio: $(ingressGatewayName)
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"

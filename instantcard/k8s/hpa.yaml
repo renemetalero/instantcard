@@ -1,0 +1,25 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-d-$(name)
+  namespace: $(nsmtls)
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: d-$(name)
+  minReplicas: $(hpa.minReplicas)
+  maxReplicas: $(hpa.maxReplicas)
+  metrics:
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: $(resource.memory.averageUtilization)
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: $(resource.cpu.averageUtilization)

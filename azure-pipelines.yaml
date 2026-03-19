@@ -1,0 +1,66 @@
+
+parameters:
+- name: agentPool
+  type: string
+  default: Empty
+  values:
+    - Empty
+    - DeployMonusinAP
+    - DeployMonusinQA
+    - DeployMonusinPROD
+
+trigger:
+  branches:
+    include:
+      - develop
+      - master
+      - release
+  paths:
+    exclude:
+      - /azure-pipelines.yml
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: 'Administración TI/NU1098009_PipelinesTemplates_DevOps'
+     
+
+name: $(Build.SourceBranchName).$(date:yyyyMMdd)$(rev:.r)
+
+variables:
+  JAVA_TOOL_OPTIONS: "-Dfile.encoding=UTF-8"
+
+stages:
+- stage: Build
+  displayName: Build
+  jobs:
+  - job: Build
+    displayName: Build
+
+   
+    ${{ if eq(parameters.agentPool, 'Empty') }}:
+      pool:
+        ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+          name: DeployMonusinPROD
+        ${{ elseif eq(variables['Build.SourceBranchName'], 'release') }}:
+          name: DeployMonusinQA
+        ${{ else }}:
+          name: DeployMonusinAP
+    ${{ else }}:
+      pool:
+        name: ${{ parameters.agentPool }}
+
+    steps:
+    - checkout: self
+      clean: true
+      fetchDepth: 1
+    
+    - template: templates/gradlew.yml@templates
+      parameters:
+        appName: '$(appName)'
+        gradlewOptions: '--stacktrace --warning-mode all'
+        routeCopyFiles:
+          - folder: '$(appName)/build/libs'
+          - folder: '$(appName)/k8s'
+          - file: '$(appName)/dockerfile'

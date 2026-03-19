@@ -1,0 +1,4 @@
+## en este archivo se colocaran las variables del proyecto, por favor ingresar a https://dev.azure.com.mcas.ms/administraciontiba/Administraci%C3%B3n%20TI/_wiki/wikis/Administraci%C3%B3n-TI.wiki/1124/Variables
+variables:
+  RegistryURL: 'registrydocker.azurecr.io'
+  DirName: ''
